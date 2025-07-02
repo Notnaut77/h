@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-suitcase-rolling"></i> Semester 3</h1>
+            <p>Packing Checklist - Stay Organized!</p>
+            
+            <div class="progress-container">
+                <div class="progress-header">
+                    <span class="progress-text">Overall Progress</span>
+                    <span class="progress-percentage" id="overallProgress">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-container">
+            <!-- Bedroom Essentials -->
+            <div class="category" data-category="bedroom">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        Bedroom Essentials
+                    </div>
+                    <div class="category-stats">
+                        <div class="category-progress">
+                            <span class="completed-count">0</span>/<span class="total-count">3</span>
+                            <div class="category-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="bedsheet"></div>
+                            </div>
+                            <span class="item-text">Bedsheet</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="facewash"></div>
+                            </div>
+                            <span class="item-text">Facewash and Cetaphil</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="quilt"></div>
+                            </div>
+                            <span class="item-text">Quilt</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-item-form">
+                        <input type="text" class="add-item-input" placeholder="Add new bedroom item..." onkeypress="handleAddItem(event, 'bedroom')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stationery -->
+            <div class="category" data-category="stationery">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white;">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        Stationery
+                    </div>
+                    <div class="category-stats">
+                        <div class="category-progress">
+                            <span class="completed-count">0</span>/<span class="total-count">6</span>
+                            <div class="category-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="black-pen"></div>
+                            </div>
+                            <span class="item-text">Black pen</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="pencil"></div>
+                            </div>
+                            <span class="item-text">Pencil</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="pouch"></div>
+                            </div>
+                            <span class="item-text">Pouch</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="stapler"></div>
+                            </div>
+                            <span class="item-text">Stapler</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="marker"></div>
+                            </div>
+                            <span class="item-text">Marker</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="gum"></div>
+                            </div>
+                            <span class="item-text">Gum</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-item-form">
+                        <input type="text" class="add-item-input" placeholder="Add new stationery item..." onkeypress="handleAddItem(event, 'stationery')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electronics & Accessories -->
+            <div class="category" data-category="electronics">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white;">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        Electronics & Accessories
+                    </div>
+                    <div class="category-stats">
+                        <div class="category-progress">
+                            <span class="completed-count">0</span>/<span class="total-count">3</span>
+                            <div class="category-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="spectacle"></div>
+                            </div>
+                            <span class="item-text">Spectacle</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="air-dopes"></div>
+                            </div>
+                            <span class="item-text">Air dopes</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="watch"></div>
+                            </div>
+                            <span class="item-text">Watch</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-item-form">
+                        <input type="text" class="add-item-input" placeholder="Add new electronics item..." onkeypress="handleAddItem(event, 'electronics')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food & Kitchen -->
+            <div class="category" data-category="food">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #fa709a, #fee140); color: white;">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        Food & Kitchen
+                    </div>
+                    <div class="category-stats">
+                        <div class="category-progress">
+                            <span class="completed-count">0</span>/<span class="total-count">5</span>
+                            <div class="category-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="snacks"></div>
+                            </div>
+                            <span class="item-text">Snacks</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="masalas"></div>
+                            </div>
+                            <span class="item-text">Masalas</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="oil"></div>
+                            </div>
+                            <span class="item-text">Oil</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="dish-sponge"></div>
+                            </div>
+                            <span class="item-text">Dish sponge</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="washing-liquid"></div>
+                            </div>
+                            <span class="item-text">Washing liquid: front load</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-item-form">
+                        <input type="text" class="add-item-input" placeholder="Add new food/kitchen item..." onkeypress="handleAddItem(event, 'food')">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Care -->
+            <div class="category" data-category="personal-care">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #a8edea, #fed6e3); color: #333;">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        Personal Care
+                    </div>
+                    <div class="category-stats">
+                        <div class="category-progress">
+                            <span class="completed-count">0</span>/<span class="total-count">8</span>
+                            <div class="category-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="checklist-items">
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="sunscreen"></div>
+                            </div>
+                            <span class="item-text">Sunscreen</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="deo"></div>
+                            </div>
+                            <span class="item-text">Deo</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="perfume"></div>
+                            </div>
+                            <span class="item-text">Perfume</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="liquid-soap"></div>
+                            </div>
+                            <span class="item-text">Liquid soap</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="brush"></div>
+                            </div>
+                            <span class="item-text">Brush</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="toothpaste"></div>
+                            </div>
+                            <span class="item-text">Toothpaste</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox-container">
+                                <div class="checkbox" data-item="tongue-scrapper"></div>
+                            </div>
+                            <span class="item-text">Tongue scrapper</span>
+                            <div class="item-actions">
+                                <button class="action-btn" onclick="deleteItem(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+
+
+</body>
+        <script src="script.js"></script>
+</html>
